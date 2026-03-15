@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='light'] {
+	--color-background: #f9f9fa;
+	--color-background-offset: #dbeafe;
+	--color-text: #1b2d45;
+	--color-text-offset: #373a3c;
+	--color-border: #cdd7e6;
+	--color-primary: #374ec7;
+	--color-primary-offset: #5671fe;
+	--color-accent: #0891b2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme='dark'] {
+	--color-background: #1a161a;
+	--color-background-offset: #302b30;
+	--color-text: #fefffe;
+	--color-text-offset: #bebebe;
+	--color-border: #413841;
+	--color-primary: #e78bf3;
+	--color-primary-offset: #dc66ec;
+	--color-accent: #22d3ee;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: no-preference) {
+	:focus {
+		transition: outline-offset 0.1s ease;
+		outline-offset: 4px;
+	}
+}
+
+a {
+	color: var(--color-text-offset);
+}
+
+.underlined {
+	position: relative;
+	text-decoration: none !important;
+	white-space: nowrap;
+}
+
+.underlined:focus {
+	outline: none;
+	text-decoration: none !important;
+}
+
+.underlined:after {
+	content: '';
+	height: 2px;
+	transform: scaleX(0);
+	transition: transform 0.25s ease;
+	transform-origin: left;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	display: block;
+	position: absolute;
+}
+
+.underlined:hover:after,
+.underlined:focus:after,
+.active.underlined:after {
+	background-color: currentColor;
+	transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion) {
+	.underlined:after {
+		opacity: 0;
+		transition: opacity 0.25s ease;
+	}
+
+	.underlined:hover:after,
+	.underlined:focus:after,
+	.active.underlined:after {
+		opacity: 1;
+	}
+}
+
+.container {
+	max-width: theme(maxWidth.7xl);
+	width: 91.666667%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.link {
+	@apply block whitespace-nowrap font-medium focus:outline-none;
+	color: var(--color-text-offset);
+}
+
+.link:hover,
+.link:focus {
+	color: var(--color-text);
 }
