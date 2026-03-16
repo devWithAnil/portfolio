@@ -37,12 +37,12 @@ const Hero = () => {
                         />
                     </span>
                 </h2>
-                <p className="mt-4 text-xs sm:text-base text-center text-[var(--color-text-offset)] max-w-xl leading-relaxed">
+                <p className="mt-4 text-xs sm:text-base text-center text-(--color-text-offset) max-w-xl leading-relaxed">
                     Based in Gurugram, India — I craft scalable web applications, intuitive UI/UX, and end-to-end digital products that make an impact. 7+ years of experience across startups and enterprises.
                 </p>
-                <a href="/#works" className="mt-6 px-8 py-3 sm:px-10 sm:py-4 bg-blue-800 hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-base sm:text-lg font-medium text-white flex items-center">
-                    <span>See my work</span>
-                    <BsArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2"/>
+                <a href="/#works" className="mt-6 px-8 py-3 sm:px-10 sm:py-4 bg-blue-800 hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-base sm:text-lg font-medium flex items-center">
+                    <span className="text-white">See my work</span>
+                    <BsArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 text-white"/>
                 </a>
             </div>
         </div>
