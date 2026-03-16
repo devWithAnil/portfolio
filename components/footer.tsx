@@ -18,7 +18,7 @@ export const Footer = () => {
 						Github
 					</a>
 					<a
-						href='https://topmate.io/anil_yadav/'
+						href='https://topmate.io/anil_yadav36'
 						className='link'
 						target='_blank'
 						rel='noopener noreferrer'
@@ -34,15 +34,15 @@ export const Footer = () => {
 						LinkedIn
 					</a>
 					<a
-						href='https://www.behance.net/Sibasish19'
+						href='https://medium.com/@anilyadavnitp'
 						className='link'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
-						Behance
+						Medium
 					</a>
 					<a
-						href='https://twitter.com/iamanilky'
+						href='https://topmate.io/anil_yadav36/'
 						className='link'
 						target='_blank'
 						rel='noopener noreferrer'
