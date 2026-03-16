@@ -15,7 +15,13 @@ const ClientReviewCard = ({name, image, role, review}: Props) => {
             {review ?? 'Great experience working together. Highly recommended!'}
         </p>
         <div className="flex items-center mt-5 space-x-3">
-            <Image src={image} alt={name} width={48} height={48} className="rounded-full border-2 border-[var(--color-accent)]" />
+            <Image
+                src={image || "/default-avatar.png"}
+                alt={name}
+                width={48}
+                height={48}
+                className="rounded-full border-2 border-[var(--color-accent)]"
+            />
             <div>
                 <h1 className="text-[var(--color-accent)] font-bold text-base">{name}</h1>
                 <p className="text-[var(--color-text-offset)] text-sm">{role}</p>

@@ -29,14 +29,14 @@ export const Navbar = () => {
 	}
 
 	return (
-		<header className='fixed w-full z-10 bg-background transition-all duration-200'>
+		<header className='fixed w-full z-50 bg-[var(--color-background)] border-b border-[var(--color-border)] transition-all duration-200'>
 			<div className='container'>
 				<div className='relative flex justify-between items-center h-16 md:h-20'>
 					<div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
 						<button
 							className='inline-flex items-center p-2 rounded-md hover:shadow-md focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
 							aria-label='Main menu'
-							aria-expanded='false'
+							aria-expanded={isMenuOpen}
 							type='button'
 							onClick={() => setIsMenuOpen(prev => !prev)}
 						>
@@ -51,7 +51,7 @@ export const Navbar = () => {
 								className='inline-flex items-center p-2 space-x-2 rounded-md focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
 							>
 								<Logo className='h-8 w-8'/>
-								<span className='hidden sm:block text-lg font-semibold text-text'>
+								<span className='hidden sm:block text-lg font-semibold text-[var(--color-text)]'>
 									Anil Yadav
 								</span>
 							</Link>
@@ -78,22 +78,25 @@ export const Navbar = () => {
 						</button>
 					</div>
 				</div>
-				<nav
-					className={`p-2 pb-3 md:hidden ${isMenuOpen ? 'block' : 'hidden'}` }
-				>
-					<ol className='text-center'>
-						{LINKS.map(({ name, href }) => (
-							<li key={name}>
-								<Link
-									href={href}
-									className='block px-3 py-2 rounded-md font-medium leading-5 text-text-offset hover:text-text hover:bg-background focus:outline-none focus:text-text focus:bg-background transition duration-150 ease-in-out'
-								>
-									{name}
-								</Link>
-							</li>
-						))}
-					</ol>
-				</nav>
+
+				{/* Mobile menu dropdown */}
+				{isMenuOpen && (
+					<nav className='md:hidden bg-[var(--color-background)] border-t border-[var(--color-border)] px-4 py-3'>
+						<ol className='flex flex-col gap-1'>
+							{LINKS.map(({ name, href }) => (
+								<li key={name}>
+									<Link
+										href={href}
+										onClick={() => setIsMenuOpen(false)}
+										className='block px-4 py-3 rounded-xl font-medium text-[var(--color-text-offset)] hover:text-[var(--color-text)] hover:bg-[var(--color-background-offset)] transition-all duration-150'
+									>
+										{name}
+									</Link>
+								</li>
+							))}
+						</ol>
+					</nav>
+				)}
 			</div>
 		</header>
 	);

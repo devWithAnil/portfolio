@@ -3,8 +3,8 @@ import { FaReact, FaNodeJs } from "react-icons/fa"
 import { SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si"
 
 const stats = [
-    { label: "Years of Experience", value: "6+" },
-    { label: "Projects Delivered", value: "30+" },
+    { label: "Years of Experience", value: "7+" },
+    { label: "Projects Delivered", value: "10+" },
     { label: "Happy Clients", value: "20+" },
     { label: "Technologies", value: "10+" },
 ]
