@@ -29,7 +29,7 @@ export const Navbar = () => {
 	}
 
 	return (
-		<header className='fixed w-full z-50 bg-[var(--color-background)] border-b border-[var(--color-border)] transition-all duration-200'>
+		<header className='fixed w-full z-50 bg-[var(--color-background)] transition-all duration-200'>
 			<div className='container'>
 				<div className='relative flex justify-between items-center h-16 md:h-20'>
 					<div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
